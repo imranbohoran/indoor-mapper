@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.tib.indoor_mapper.location.FirebaseFactory;
-import com.tib.indoor_mapper.location.IALocationListenerFactory;
+import com.tib.indoor_mapper.location.LocationManagerFactory;
+import com.tib.indoor_mapper.location.LocationStoreFactory;
+import com.tib.indoor_mapper.location.LocationListenerFactory;
 import com.tib.indoor_mapper.location.LocationLogger;
 
 public class MainGeoFencerActivity extends AppCompatActivity {
@@ -19,7 +20,12 @@ public class MainGeoFencerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        locationLogger = LocationLogger.create(this, new IALocationListenerFactory(), new FirebaseFactory());
+        locationLogger = LocationLogger.create(
+                this,
+                new LocationManagerFactory(),
+                new LocationListenerFactory(),
+                new LocationStoreFactory());
+
         setContentView(R.layout.acitivity_main);
     }
 
@@ -31,6 +37,12 @@ public class MainGeoFencerActivity extends AppCompatActivity {
     public void stopLogging(View view) {
         Log.i(TAG, "Stop logging location");
         locationLogger.stopLogging();
+    }
+
+    @Override
+    protected void onDestroy() {
+        locationLogger.destroy();
+        super.onDestroy();
     }
 
     public void startFencing(View view) {

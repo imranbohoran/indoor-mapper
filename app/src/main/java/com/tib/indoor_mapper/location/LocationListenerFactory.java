@@ -7,9 +7,9 @@ import android.util.Log;
 import com.indooratlas.android.sdk.IALocation;
 import com.indooratlas.android.sdk.IALocationListener;
 
-public class IALocationListenerFactory {
+public class LocationListenerFactory {
 
-    public IALocationListener create(final Context context, final FirebaseFactory firebaseFatory) {
+    public IALocationListener createIALocationListener(final Context context, final LocationStoreFactory firebaseFatory) {
         return new IALocationListener() {
             @Override
             public void onLocationChanged(IALocation iaLocation) {
