@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">indoor-mapper</string>
+    <string name="stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="geofence">Geofence</string>
+    <string name="welcome_to_your_lecture_room_finder">Welcome to your lecture room finder</string>
+    <string name="you_can_start_stop_logging_your_location">You can start/stop logging your location</string>
+    <string name="you_can_create_a_geofence_for_a_location">You can create a geofence for a location</string>
+    <string name="location_permission_request_title">Permission Required</string>
+    <string name="location_permission_request_rationale">Access to coarse location is required for faster first fix.</string>
+    <string name="permission_button_accept">Sure</string>
+    <string name="permission_button_deny">No</string>
+    <string name="location_permission_denied_message">No access to locations. Time to first fix may be severely delayed!</string>
 </resources>
