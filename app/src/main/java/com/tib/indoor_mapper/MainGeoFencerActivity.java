@@ -1,5 +1,6 @@
 package com.tib.indoor_mapper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -47,6 +48,8 @@ public class MainGeoFencerActivity extends AppCompatActivity {
 
     public void startFencing(View view) {
         Log.i(TAG, "Start Geofencing");
+        Intent intent = new Intent(this, GeoFenceActivity.class);
+        startActivity(intent);
     }
 
 }
