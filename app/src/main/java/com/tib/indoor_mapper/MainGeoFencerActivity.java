@@ -9,7 +9,6 @@ import android.view.View;
 
 import com.tib.indoor_mapper.location.LocationManagerFactory;
 import com.tib.indoor_mapper.location.LocationStoreFactory;
-import com.tib.indoor_mapper.location.LocationListenerFactory;
 import com.tib.indoor_mapper.location.LocationLogger;
 
 public class MainGeoFencerActivity extends AppCompatActivity {

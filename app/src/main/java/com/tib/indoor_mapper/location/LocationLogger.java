@@ -6,6 +6,7 @@ import android.util.Log;
 import com.indooratlas.android.sdk.IALocationListener;
 import com.indooratlas.android.sdk.IALocationManager;
 import com.indooratlas.android.sdk.IALocationRequest;
+import com.tib.indoor_mapper.LocationListenerFactory;
 
 public class LocationLogger {
 

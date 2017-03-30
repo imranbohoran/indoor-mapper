@@ -15,4 +15,6 @@
     <string name="geofence_header">Get notified when you\'re close to a location of your choice</string>
     <string name="geofence_alert">Alert</string>
     <string name="title_activity_geofence_activiy">GeofenceActiviy</string>
+    <string name="geo_fence_in_range_message">You\'re in range of your desired location</string>
+    <string name="geo_fence_to_be_reached_message">Still to get there</string>
 </resources>

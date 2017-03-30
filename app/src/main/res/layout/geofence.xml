@@ -73,11 +73,10 @@
         android:id="@+id/lbl_current_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
         android:text="Only shown when we are close"
         android:layout_below="@+id/button_alert"
-        android:layout_alignEnd="@+id/text_lat"
-        android:layout_marginEnd="11dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/lbl_lng"
@@ -96,5 +95,45 @@
         android:layout_alignTop="@+id/text_lat"
         android:layout_marginTop="10dp"
         android:text="Latitude" />
+
+    <Button
+        android:id="@+id/button_get_current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getCurrentLocation"
+        android:text="Now"
+        android:layout_above="@+id/button_clear_current_location"
+        android:layout_alignStart="@+id/button_clear_current_location"
+        android:layout_marginBottom="33dp" />
+
+    <TextView
+        android:id="@+id/lbl_current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Will show current location"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/button_get_current_location"
+        android:layout_alignStart="@+id/txt_info_current_location" />
+
+    <Button
+        android:id="@+id/button_clear_current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clearCurrentLocation"
+        android:text="Clear"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/text_lng"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/lbl_debug_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Only for debugging purposes"
+        android:background="@drawable/bubble_orange"
+        android:layout_above="@+id/button_get_current_location"
+        android:layout_alignStart="@+id/button_get_current_location"
+        android:layout_marginBottom="7dp" />
 
 </RelativeLayout>
