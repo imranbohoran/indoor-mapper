@@ -28,6 +28,13 @@ public class GeoFenceLocationListener implements IALocationListener {
         this.geoFenceBroadcaster = geoFenceBroadcaster;
     }
 
+    /**
+     * Gets triggered when the location changes.
+     * If the location recived as part of the location change is within range to the
+     * geofence location configured, then a message is broadcasted with the current location.
+     *
+     * @param iaLocation The new location
+     */
     @Override
     public void onLocationChanged(IALocation iaLocation) {
         Location currentLocation = iaLocation.toLocation();
@@ -43,7 +50,5 @@ public class GeoFenceLocationListener implements IALocationListener {
     }
 
     @Override
-    public void onStatusChanged(String s, int i, Bundle bundle) {
-
-    }
+    public void onStatusChanged(String s, int i, Bundle bundle) {}
 }

@@ -8,6 +8,13 @@ import com.indooratlas.android.sdk.IALocationManager;
 import com.indooratlas.android.sdk.IALocationRequest;
 import com.tib.indoor_mapper.LocationListenerFactory;
 
+/**
+ * All location logging operations are handled by the LocationLogger.
+ * This class will provide the capability to start and stop location logging
+ * and will initiate and cleanup resources as required.
+ *
+ * The implementation is based on Indoor Atlast APIs.
+ */
 public class LocationLogger {
 
     private static final String TAG = "LocationLogger";

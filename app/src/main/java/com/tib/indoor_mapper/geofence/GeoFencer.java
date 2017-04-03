@@ -12,7 +12,7 @@ import com.tib.indoor_mapper.location.LocationManagerFactory;
 
 public class GeoFencer {
 
-    static final int UPDATES_RETRIEVAL_INTERVAL = 5000;
+    private static final int UPDATES_RETRIEVAL_INTERVAL = 5000;
     private IALocationManager locationManager;
     private LocationListenerFactory locationListenerFactory;
     private GeoFenceBroadcaster geoFenceBroadcaster;
@@ -29,6 +29,13 @@ public class GeoFencer {
         this.locationListenerFactory = locationListenerFactory;
     }
 
+    /**
+     * Setups geofencing by initialising a GeoFenceBroadcaster and requesting
+     * a Indoor Atlast location manager for location updates.
+     * The location request specifies the updates retrieval interval.
+     * And an Indoor Atlas location listener instance implemented as a GeoFenceLocationListener
+     * is created with access to the broadcaster.
+     */
     public void setupGeoFence(Location location) {
         IALocationListener iaListener = locationListenerFactory.createGeoFencingIAListener(location, geoFenceBroadcaster);
         IALocationRequest locationRequest = IALocationRequest

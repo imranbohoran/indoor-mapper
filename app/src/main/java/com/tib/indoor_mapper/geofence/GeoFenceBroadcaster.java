@@ -6,12 +6,16 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 
+/**
+ * Provides an API to broadcast a message to the LocalBroadcaster of
+ * the runtime. This could then be consumed by any BroadcastReceiver.
+ */
 public class GeoFenceBroadcaster {
 
-    public static final String GEOFENCE_BROADCAST_INTENT_FILTER = "location-alert";
+    static final String GEOFENCE_BROADCAST_INTENT_FILTER = "location-alert";
     private Context context;
 
-    public void initialise(Context context, BroadcastReceiver broadcastReceiver) {
+    void initialise(Context context, BroadcastReceiver broadcastReceiver) {
         this.context = context;
         LocalBroadcastManager
                 .getInstance(context)
@@ -19,7 +23,7 @@ public class GeoFenceBroadcaster {
                     new IntentFilter(GEOFENCE_BROADCAST_INTENT_FILTER));
     }
 
-    public void broadcast(Intent intent) {
+    void broadcast(Intent intent) {
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
     }
 }

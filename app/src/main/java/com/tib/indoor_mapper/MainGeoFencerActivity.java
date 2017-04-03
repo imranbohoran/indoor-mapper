@@ -11,6 +11,15 @@ import com.tib.indoor_mapper.location.LocationManagerFactory;
 import com.tib.indoor_mapper.location.LocationStoreFactory;
 import com.tib.indoor_mapper.location.LocationLogger;
 
+/**
+ * The main activity for the application that provides option to start the
+ * Geofencing and to start the location logger.
+ *
+ * Location logging - Provides means to start the location logging and stop location logging.
+ * The location logging operations are delegated to the <code>LocationLogger.java</code>
+ *
+ * GeoFencing - Starts a new actvitiy to setup and start geofencing.
+ */
 public class MainGeoFencerActivity extends AppCompatActivity {
 
     private static final String TAG = "MAIN-ACTIVITY";

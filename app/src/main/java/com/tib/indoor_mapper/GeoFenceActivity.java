@@ -22,11 +22,19 @@ import com.tib.indoor_mapper.location.LocationManagerFactory;
 import static com.tib.indoor_mapper.geofence.GeoFenceLocationListener.GEOFENCE_BROADCAST_LOCATION;
 import static com.tib.indoor_mapper.geofence.GeoFenceLocationListener.GEOFENCE_BROADCAST_YTA;
 
+/**
+ * GeoFence activity that setsup the coordinates for geofencing
+ * and initiates the process.
+ *
+ * The implementation for geofencing is delegated to <code>GeoFencer.java</code>
+ *
+ * There is also a debug feature to check the current location.
+ *
+ */
 public class GeoFenceActivity extends AppCompatActivity {
 
     private static final String TAG = "GEO-FENCING";
 
-    private GeoFencer geoFencer;
     private IALocationManager debugIALocationManager;
 
     @Override
@@ -42,7 +50,7 @@ public class GeoFenceActivity extends AppCompatActivity {
 
         TextView currentLocation = (TextView) findViewById(R.id.txt_info_current_location);
         currentLocation.setText("Current set location - Lng: " + longitude.getText() + ", Lat: " + latitude.getText());
-        geoFencer = new GeoFencer(
+        GeoFencer geoFencer = new GeoFencer(
                 this,
                 new GeoFenceBroadcaster(),
                 getBroadcastReceiver(),
@@ -90,5 +98,14 @@ public class GeoFenceActivity extends AppCompatActivity {
     public void clearCurrentLocation(View view) {
         debugIALocationManager.removeLocationUpdates(debugLocationListener);
         ((TextView) findViewById(R.id.lbl_current_location)).setText("");
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(debugIALocationManager != null) {
+            debugIALocationManager.removeLocationUpdates(debugLocationListener);
+            debugIALocationManager.destroy();
+        }
+        super.onDestroy();
     }
 }

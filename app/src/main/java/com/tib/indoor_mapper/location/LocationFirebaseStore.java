@@ -10,11 +10,17 @@ import java.util.Date;
 
 import java.text.DateFormat;
 
+/**
+ * Provides the functionality of persisting data into Firebase.
+ * The data persisted is a Location update and hence the structure of the
+ * data is local to this class based on the location provided by the Indoor
+ * Atlast apis.
+ */
 public class LocationFirebaseStore {
 
     static final String TAG = "LOCATION-STORE";
-    static final String FIREBASE_URL = "https://indoor-mapper-home.firebaseio.com";
-//    static final String FIREBASE_URL = "https://indoor-mapper.firebaseio.com";
+//    static final String FIREBASE_URL = "https://indoor-mapper-home.firebaseio.com";
+    static final String FIREBASE_URL = "https://indoor-mapper.firebaseio.com";
 
     private Firebase firebase;
 
