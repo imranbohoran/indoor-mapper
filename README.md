@@ -9,9 +9,15 @@ An application demonstrating basic location logging and geo fencing features usi
 * Firebase account
 
 #### Build and run instructions
-- The Indoor Atlas API key and the secret needs to be added to the gradle.properties file
-- The url of the firebase instance need to be overriden in `LocationFirebaseStore.java`
-*TODO: This needs to be moved to an environment variable*
-- And then run the application. This should be run on a real device as the geomagnatic sensors.
+- The Indoor Atlas API key and the secret needs to be added to the gradle.properties file.
+If this is not set, location logging and geofencing will not work.
+- The url of the firebase instance need to be overridden in `LocationFirebaseStore.java`
+- And then run the application. This should be run on a real device as the geomagnatic sensors are used to
+get location information.
+
+#### Running tests
+`./gradlew test`
 
 
+#### Building the apk
+`./gradlew assembleRelease`
